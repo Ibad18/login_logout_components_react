@@ -12,6 +12,9 @@ function App() {
     setState(false)
   }
 
+const handleSubmit = () => {
+    handleLoggedIn();
+};
 
   return (
     <>
@@ -19,7 +22,10 @@ function App() {
         <button id='login_btn' onClick={handleLoggedIn}>Login</button> :
         <button id='logout_btn' onClick={handleLoggedOut}>Logout</button>}
       <br></br><br></br>
-      {state == false ? LodgedIn() : LodgedOut()}
+      {state == false ? <LodgedIn onButtonClick={handleSubmit} /> : LodgedOut()}
+
+
+     
     </>
   )
 }
